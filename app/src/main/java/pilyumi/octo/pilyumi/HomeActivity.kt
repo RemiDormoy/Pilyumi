@@ -48,7 +48,6 @@ class HomeActivity : AppCompatActivity() {
                     collapsed.alpha = toFloat
                 }
             }
-            yolo.text = "percent : ${percent  * 100}%\nalpha: ${((percent - 0.4) * 10).toFloat()}"
         }
     }
 }
