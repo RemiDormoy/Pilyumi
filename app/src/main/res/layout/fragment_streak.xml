@@ -91,17 +91,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieNew"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:lottie_colorFilter="@color/greenLottie"
+            android:translationX="10dp"
+            android:translationY="-10dp"
+            app:lottie_fileName="animations/new.json"
+            app:layout_constraintTop_toTopOf="parent" />
         <TextView
             android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
+            android:visibility="gone"
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
-            android:layout_marginEnd="16dp"
-            android:text="New"
             android:background="@drawable/rounded_fill_up"
+            android:text="New"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView2" />
 

@@ -17,6 +17,7 @@ import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.Color
 import android.os.Handler
+import kotlinx.android.synthetic.main.fragment_streak.*
 
 
 class HomeActivity : AppCompatActivity() {
@@ -41,6 +42,10 @@ class HomeActivity : AppCompatActivity() {
         val homePagerAdapter = HomePagerAdapter(supportFragmentManager)
         viewPagerHome.adapter = homePagerAdapter
         viewPagerHome.currentItem = if (intent.getBooleanExtra("isWithNewFeature", false)) {
+            Handler().postDelayed({
+                lottieNew.setMaxProgress(0.66f)
+                lottieNew.playAnimation()
+            }, 500)
             2
         } else {
             1
@@ -51,6 +56,7 @@ class HomeActivity : AppCompatActivity() {
             }
 
             override fun onPageSelected(position: Int) {
+
             }
 
             override fun onPageScrolled(position: Int,
