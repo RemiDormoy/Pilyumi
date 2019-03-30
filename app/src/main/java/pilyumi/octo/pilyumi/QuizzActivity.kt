@@ -11,6 +11,7 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_quizz.*
 import kotlinx.android.synthetic.main.first_question.*
 import kotlinx.android.synthetic.main.second_question.*
@@ -30,10 +31,19 @@ class QuizzActivity : AppCompatActivity() {
             }
         }
         secondQuestionButton.setOnClickListener {
-            moveTo3()
+            secondSuccessView.animate().alpha(1f).withEndAction {
+                secondLottieView.playAnimation()
+                Handler().postDelayed({
+                    moveTo3()
+                }, 1000)
+            }
         }
         thirdQuestionButton.setOnClickListener {
-            finish()
+            thirdQuestionButton.setBackgroundResource(R.drawable.rounded_fill)
+            thirdQuestionButton.setTextColor(ContextCompat.getColor(this, android.R.color.white))
+            Handler().postDelayed({
+                finish()
+            }, 2000)
         }
     }
 
