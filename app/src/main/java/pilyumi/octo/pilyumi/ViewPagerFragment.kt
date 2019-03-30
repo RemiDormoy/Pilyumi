@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
+import kotlinx.android.synthetic.main.fragment_feelings.view.*
 
 
 class ViewPagerFragment(private val position: Int) : Fragment() {
@@ -17,6 +18,32 @@ class ViewPagerFragment(private val position: Int) : Fragment() {
             2 -> R.layout.fragment_feelings
             else -> R.layout.fragment_did_you_know
         }
-        return inflater.inflate(layout, container, false)
+        val inflate = inflater.inflate(layout, container, false)
+        if (position == 2) {
+            val lottie = inflate.lottieViewFeelings
+            listOf(
+                inflate.coolImageView,
+                inflate.cryingImageView8,
+                inflate.sickImageView,
+                inflate.spmImageView
+            ).forEach {
+                it.setOnClickListener {
+                    listOf(
+                        inflate.coolImageView,
+                        inflate.sickImageView,
+                        inflate.cryingImageView8,
+                        inflate.spmImageView,
+                        inflate.textView9,
+                        inflate.textView10,
+                        inflate.textView11,
+                        inflate.textView12).forEach {
+                        it.animate().alpha(0f).setDuration(300).withEndAction {
+                            lottie.playAnimation()
+                        }.start()
+                    }
+                }
+            }
+        }
+        return inflate
     }
 }
