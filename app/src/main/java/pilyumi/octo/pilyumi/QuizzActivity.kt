@@ -9,6 +9,7 @@ import android.transition.ChangeBounds
 import android.transition.TransitionManager
 import android.util.TypedValue
 import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
@@ -45,6 +46,7 @@ class QuizzActivity : AppCompatActivity() {
             text.setOnClickListener {
                 text.setBackgroundResource(R.drawable.rounded_fill_red)
                 text.setTextColor(ContextCompat.getColor(this, android.R.color.white))
+                text.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shake))
             }
         }
         thirdQuestionButton.setOnClickListener {
