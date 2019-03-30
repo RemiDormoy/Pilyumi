@@ -16,14 +16,14 @@ class ViewPagerFragment(private val position: Int) : Fragment() {
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         val layout = when (position) {
-            1 -> R.layout.fragment_awards
+            0 -> R.layout.fragment_feelings
             2 -> R.layout.fragment_streak
             else -> R.layout.fragment_did_you_know
         }
         val inflate = inflater.inflate(layout, container, false)
-        if (position == 3) {
+        if (position == 0) {
             configureForFeelings(inflate)
-        } else if (position == 0) {
+        } else if (position == 1) {
             inflate.buttonquizz.setOnClickListener {
                 startActivity(Intent(requireContext(), QuizzActivity::class.java))
             }
@@ -42,13 +42,12 @@ class ViewPagerFragment(private val position: Int) : Fragment() {
             it.setOnClickListener {
                 listOf(
                     inflate.coolImageView,
+                    inflate.handStuff,
                     inflate.sickImageView,
+                    inflate.moodSubTitle,
+                    inflate.moodTitle,
                     inflate.cryingImageView8,
-                    inflate.spmImageView,
-                    inflate.textView9,
-                    inflate.textView10,
-                    inflate.textView11,
-                    inflate.textView12).forEach {
+                    inflate.spmImageView).forEach {
                     it.animate().alpha(0f).setDuration(300).withEndAction {
                         lottie.playAnimation()
                     }.start()

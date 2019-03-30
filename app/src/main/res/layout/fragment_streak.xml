@@ -29,7 +29,6 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_extrabold"
             android:text="Streak"
             android:textColor="@color/color3"

@@ -15,120 +15,115 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/handStuff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="How do you feel ?"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="24sp"
+            android:layout_marginTop="16dp"
+            android:text="🤟"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <TextView
+            android:id="@+id/moodTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="Mood-o-meter"
+            android:textColor="@color/color1"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/handStuff"
+            app:layout_constraintStart_toStartOf="@+id/handStuff"
+            app:layout_constraintTop_toBottomOf="@+id/handStuff" />
+
+        <TextView
+            android:id="@+id/moodSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="24dp"
+            android:text="How do you feel today?"
+            android:textColor="#403A3A"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/moodTitle" />
+
+        <TextView
             android:id="@+id/coolImageView"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/rounded_shape"
+            android:layout_marginTop="8dp"
             android:padding="8dp"
+            android:text="🔥"
+            android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/cryingImageView8"
             app:layout_constraintEnd_toStartOf="@+id/sickImageView"
             app:layout_constraintHorizontal_bias="0.5"
+            android:gravity="center"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8"
-            app:layout_constraintVertical_chainStyle="spread"
-            app:srcCompat="@drawable/ic_cool" />
+            app:layout_constraintTop_toBottomOf="@+id/moodSubTitle"
+            app:layout_constraintVertical_chainStyle="spread"/>
 
-        <ImageView
+        <TextView
             android:id="@+id/sickImageView"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:gravity="center"
             android:background="@drawable/rounded_shape"
             android:padding="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
+            android:text="🌧"
+            android:textSize="30sp"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@+id/coolImageView"
-            app:layout_constraintTop_toTopOf="@+id/coolImageView"
-            app:srcCompat="@drawable/ic_sick" />
+            app:layout_constraintTop_toTopOf="@+id/coolImageView" />
 
-        <ImageView
+        <TextView
             android:id="@+id/cryingImageView8"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:layout_marginBottom="64dp"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/rounded_shape"
+            android:gravity="center"
             android:padding="8dp"
+            android:text="🤷‍"
+            android:textSize="30sp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/spmImageView"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/coolImageView"
-            app:layout_constraintVertical_chainStyle="spread"
-            app:srcCompat="@drawable/ic_crying" />
+            app:layout_constraintVertical_chainStyle="spread" />
 
-        <ImageView
+        <TextView
             android:id="@+id/spmImageView"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
             android:background="@drawable/rounded_shape"
             android:padding="8dp"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="😡"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toEndOf="@+id/cryingImageView8"
             app:layout_constraintTop_toTopOf="@+id/cryingImageView8"
             app:srcCompat="@drawable/ic_spm" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Happy"
-            android:textColor="@android:color/darker_gray"
-            app:layout_constraintEnd_toEndOf="@+id/coolImageView"
-            app:layout_constraintStart_toStartOf="@+id/coolImageView"
-            app:layout_constraintTop_toBottomOf="@+id/coolImageView" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Sick"
-            android:textColor="@android:color/darker_gray"
-            app:layout_constraintEnd_toEndOf="@+id/sickImageView"
-            app:layout_constraintStart_toStartOf="@+id/sickImageView"
-            app:layout_constraintTop_toBottomOf="@+id/sickImageView" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Sad"
-            android:textColor="@android:color/darker_gray"
-            app:layout_constraintEnd_toEndOf="@+id/cryingImageView8"
-            app:layout_constraintStart_toStartOf="@+id/cryingImageView8"
-            app:layout_constraintTop_toBottomOf="@+id/cryingImageView8" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Period is coming"
-            android:textColor="@android:color/darker_gray"
-            app:layout_constraintEnd_toEndOf="@+id/spmImageView"
-            app:layout_constraintStart_toStartOf="@+id/spmImageView"
-            app:layout_constraintTop_toBottomOf="@+id/spmImageView" />
-
 
         <FrameLayout
             android:layout_width="200dp"
