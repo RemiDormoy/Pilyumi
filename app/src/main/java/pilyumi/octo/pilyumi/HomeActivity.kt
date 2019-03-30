@@ -19,12 +19,12 @@ class HomeActivity : AppCompatActivity() {
         supportActionBar?.hide()
         initTimer()
         initScrollBehaviour()
-        card1.setOnClickListener {
-            startActivity(Intent(this, QuizzActivity::class.java))
-        }
-        card2.setOnClickListener {
-            startActivity(Intent(this, AwardsActivity::class.java))
-        }
+        viewPagerHome.setPadding(150, 0, 150, 50)
+        viewPagerHome.clipToPadding = false
+        viewPagerHome.pageMargin = 50
+        val homePagerAdapter = HomePagerAdapter(supportFragmentManager)
+        viewPagerHome.adapter = homePagerAdapter
+        viewPagerHome.currentItem = 1
     }
 
     private fun initTimer() {
