@@ -28,7 +28,7 @@ class QuizzActivity : AppCompatActivity() {
             firstQuestionButton.setTextColor(ContextCompat.getColor(this, android.R.color.white))
             Handler().postDelayed({
                 moveTo2()
-            }, 1000)
+            }, 500)
         }
         listOf(questiongoodtoo, textViewgood, fabulous).forEach { clicked ->
             clicked.setOnClickListener {
@@ -37,7 +37,7 @@ class QuizzActivity : AppCompatActivity() {
                     ContextCompat.getColor(this, android.R.color.white))
                 Handler().postDelayed({
                     moveTo3()
-                }, 1000)
+                }, 500)
             }
         }
         listOf(textView167, textViewfirstyolo, textView16, textView15, textView1).forEach { text ->
@@ -51,7 +51,7 @@ class QuizzActivity : AppCompatActivity() {
             thirdQuestionButton.setTextColor(ContextCompat.getColor(this, android.R.color.white))
             Handler().postDelayed({
                 finish()
-            }, 1000)
+            }, 500)
         }
     }
 
