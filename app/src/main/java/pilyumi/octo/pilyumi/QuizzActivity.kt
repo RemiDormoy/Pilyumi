@@ -40,6 +40,12 @@ class QuizzActivity : AppCompatActivity() {
                 }, 1000)
             }
         }
+        listOf(textView167, textViewfirstyolo, textView16, textView15, textView1).forEach { text ->
+            text.setOnClickListener {
+                text.setBackgroundResource(R.drawable.rounded_fill_red)
+                text.setTextColor(ContextCompat.getColor(this, android.R.color.white))
+            }
+        }
         thirdQuestionButton.setOnClickListener {
             thirdQuestionButton.setBackgroundResource(R.drawable.rounded_fill)
             thirdQuestionButton.setTextColor(ContextCompat.getColor(this, android.R.color.white))
@@ -68,6 +74,8 @@ class QuizzActivity : AppCompatActivity() {
         animator.duration = 500
         animator.interpolator = AccelerateDecelerateInterpolator()
         animator.start()
+        circle1.setImageResource(R.drawable.circle_green)
+        circle2.setImageResource(R.drawable.circle_white)
     }
 
     private fun moveTo3() {
@@ -83,6 +91,8 @@ class QuizzActivity : AppCompatActivity() {
         animator.duration = 500
         animator.interpolator = AccelerateDecelerateInterpolator()
         animator.start()
+        circle2.setImageResource(R.drawable.circle_green)
+        circle3.setImageResource(R.drawable.circle_white)
     }
 
 }

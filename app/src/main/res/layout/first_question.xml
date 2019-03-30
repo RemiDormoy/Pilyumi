@@ -30,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textView167"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -57,10 +57,10 @@
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="@+id/textView13"
             app:layout_constraintStart_toStartOf="@+id/textView13"
-            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+            app:layout_constraintTop_toBottomOf="@+id/textView167" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/textViewfirstyolo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
