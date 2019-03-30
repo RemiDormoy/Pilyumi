@@ -17,11 +17,11 @@ class ViewPagerFragment(private val position: Int) : Fragment() {
                               savedInstanceState: Bundle?): View {
         val layout = when (position) {
             1 -> R.layout.fragment_awards
-            2 -> R.layout.fragment_feelings
+            2 -> R.layout.fragment_streak
             else -> R.layout.fragment_did_you_know
         }
         val inflate = inflater.inflate(layout, container, false)
-        if (position == 2) {
+        if (position == 3) {
             configureForFeelings(inflate)
         } else if (position == 0) {
             inflate.buttonquizz.setOnClickListener {

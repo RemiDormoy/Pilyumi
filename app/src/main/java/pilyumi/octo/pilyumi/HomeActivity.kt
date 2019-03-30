@@ -10,9 +10,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
-import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_home_root.*
-import kotlinx.android.synthetic.main.collpasing_stuff.*
 import org.threeten.bp.LocalTime
 import org.threeten.bp.format.DateTimeFormatter
 import android.animation.ObjectAnimator
@@ -30,7 +28,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home_root)
         supportActionBar?.hide()
         initTimer()
-        initScrollBehaviour()
         viewPagerHome.setPadding(150, 0, 150, 50)
         viewPagerHome.clipToPadding = false
         viewPagerHome.pageMargin = 50
@@ -77,26 +74,4 @@ class HomeActivity : AppCompatActivity() {
         }.start()
     }
 
-    private fun initScrollBehaviour() {
-        scrollViewRoot.viewTreeObserver.addOnScrollChangedListener {
-            val expand = findViewById<View>(R.id.collapsYolo)
-            val collapsed = findViewById<View>(R.id.collapsedCalendarContainer)
-            val percent = scrollViewRoot.scrollY.toFloat() / expand.height.toFloat()
-            when {
-                percent > 0.5f -> {
-                    expand.alpha = 0f
-                    collapsed.alpha = 1f
-                }
-                percent < 0.4f -> {
-                    expand.alpha = 1f
-                    collapsed.alpha = 0f
-                }
-                else -> {
-                    expand.alpha = (1 - ((percent - 0.4)) * 10).toFloat()
-                    val toFloat = ((percent - 0.4) * 10).toFloat()
-                    collapsed.alpha = toFloat
-                }
-            }
-        }
-    }
 }
