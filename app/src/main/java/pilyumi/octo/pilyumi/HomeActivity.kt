@@ -17,6 +17,8 @@ import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.Color
 import android.os.Handler
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import kotlinx.android.synthetic.main.fragment_streak.*
 
 
@@ -48,6 +50,7 @@ class HomeActivity : AppCompatActivity() {
             }, 500)
             2
         } else {
+            showPopUp()
             1
         }
         viewPagerHome.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
@@ -76,6 +79,20 @@ class HomeActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    private fun showPopUp() {
+        popLayout.visibility = VISIBLE
+        goToQuizzPopButton.setOnClickListener {
+            startActivity(Intent(this@HomeActivity, QuizzActivity::class.java))
+        }
+        laterButton.setOnClickListener {
+            dismissPop()
+        }
+    }
+
+    private fun dismissPop() {
+        popLayout.visibility = GONE
     }
 
     private fun initTimer() {

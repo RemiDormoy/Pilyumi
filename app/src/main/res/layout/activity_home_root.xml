@@ -971,4 +971,77 @@
         android:layout_marginTop="48dp"
         app:srcCompat="@drawable/ic_menu_param_pilyumi" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/popLayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@android:color/black"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="32dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:gravity="center"
+                    android:text="Hey ! Look who’s winning Lola’s trust !"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:text="🎉"/>
+
+                <TextView
+                    android:id="@+id/goToQuizzPopButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/greenLottie"
+                    android:padding="8dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:textSize="24sp"
+                    android:text="Unlock your new feature now"/>
+
+                <TextView
+                    android:id="@+id/laterButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:textColor="@android:color/darker_gray"
+                    android:text="Later"/>
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
