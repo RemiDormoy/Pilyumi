@@ -4,9 +4,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-class HomePagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
+class HomePagerAdapter(fragmentManager: FragmentManager, private val streakClicker: () -> Unit) : FragmentPagerAdapter(fragmentManager) {
     override fun getItem(position: Int): Fragment {
-        return ViewPagerFragment(position)
+        return ViewPagerFragment(position, streakClicker)
     }
 
     override fun getCount(): Int {

@@ -6,7 +6,7 @@
     android:id="@+id/rootContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="@color/color2">
+    android:background="@color/color3">
 
     <TextView
         android:id="@+id/timerTextView"
@@ -21,6 +21,75 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_menu_param_pilyumi" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/streakContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="20dp"
+        android:transitionName="carte"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timerTextView">
+
+        <include layout="@layout/streak_unleashed_2" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/streakTransitionView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:elevation="8dp"
+        android:fontFamily="@font/nunito_extrabold"
+        android:text="Streak"
+        android:textColor="@color/color3"
+        android:textSize="24sp"
+        android:transitionName="robot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timerTextView" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:elevation="8dp"
+        android:text="Best streak"
+        android:textColor="@android:color/darker_gray"
+        android:transitionName="Best streak"
+        app:layout_constraintEnd_toStartOf="@+id/textView19"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/streakTransitionView" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:elevation="8dp"
+        android:fontFamily="@font/nunito_extrabold"
+        android:text="124 days"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:transitionName="124 days"
+        app:layout_constraintEnd_toEndOf="@+id/textView17"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <LinearLayout
         android:id="@+id/calendarView"
@@ -950,112 +1019,33 @@
 
     </LinearLayout>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPagerHome"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:clipChildren="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <TextView
+        android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_menu_param_pilyumi" />
+        android:layout_marginEnd="16dp"
+        android:elevation="8dp"
+        android:text="Current streak"
+        android:textColor="@android:color/darker_gray"
+        android:transitionName="Current streak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toTopOf="@+id/textView17" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/popLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        tools:visibility="visible">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.5"
-            android:background="@android:color/black" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            app:cardCornerRadius="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="32dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_extrabold"
-                    android:gravity="center"
-                    android:text="Hey ! Look who’s winning Lola’s trust !"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="🎉"
-                    android:textSize="40sp" />
-
-                <TextView
-                    android:id="@+id/goToQuizzPopButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?attr/selectableItemBackground"
-                    android:fontFamily="@font/nunito_bold"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:text="Unlock your new\n feature now"
-                    android:textColor="@color/greenLottie"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:id="@+id/laterButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?attr/selectableItemBackground"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:text="Later"
-                    android:textColor="@android:color/darker_gray" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:id="@+id/streakContainer"
-        android:visibility="gone"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/timerTextView">
-
-        <include layout="@layout/streak_unleashed" />
-
-    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:fontFamily="@font/nunito_extrabold"
+        android:text="54 days"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:transitionName="54 days"
+        app:layout_constraintEnd_toEndOf="@+id/textView19"
+        app:layout_constraintStart_toStartOf="@+id/textView19"
+        app:layout_constraintTop_toTopOf="@+id/textView18" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

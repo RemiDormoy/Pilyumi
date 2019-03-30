@@ -20,6 +20,16 @@ import android.os.Handler
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import kotlinx.android.synthetic.main.fragment_streak.*
+import kotlinx.android.synthetic.main.streak_unleashed.*
+import android.R.attr.y
+import android.R.attr.x
+import android.view.ViewAnimationUtils
+import android.animation.Animator
+import android.app.ActivityOptions
+import android.opengl.ETC1.getHeight
+import android.opengl.ETC1.getWidth
+import android.util.Pair as UtilPair
+
 
 
 class HomeActivity : AppCompatActivity() {
@@ -33,6 +43,36 @@ class HomeActivity : AppCompatActivity() {
         ArgbEvaluator()
     }
 
+    private fun openStreak() {
+        val makeSceneTransitionAnimation = ActivityOptions
+            .makeSceneTransitionAnimation(this,
+                UtilPair.create(streakTransitionView1, "robot"),
+                UtilPair.create(bestStreakTView, "Best streak"),
+                UtilPair.create(strinozenicz, "carte"),
+                UtilPair.create(currentStreakTestView, "Current streak"),
+                UtilPair.create(textView54days, "54 days"),
+                UtilPair.create(days124textView18, "124 days")
+            )
+        startActivity(Intent(this, StreakActivity::class.java), makeSceneTransitionAnimation.toBundle())
+//        streakContainer.translationY = rootContainer.height * 0.75f
+//        val startRadius = 0
+//        val endRadius = Math.hypot(rootContainer.getWidth().toDouble(), rootContainer.getHeight().toDouble()).toInt()
+//
+//        val anim = ViewAnimationUtils.createCircularReveal(streakContainer, rootContainer.width / 2, (rootContainer.height * 0.75f).toInt(),
+//            startRadius.toFloat(), endRadius.toFloat())
+//
+//        streakContainer.setVisibility(View.VISIBLE)
+//        //anim.start()
+//        streakContainer.animate().translationY(0f).start()
+//        closeImageViewStreak.setOnClickListener {
+//            closeStreak()
+//        }
+    }
+
+    private fun closeStreak() {
+        streakContainer.visibility = GONE
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_root)
@@ -41,7 +81,7 @@ class HomeActivity : AppCompatActivity() {
         viewPagerHome.setPadding(150, 0, 150, 50)
         viewPagerHome.clipToPadding = false
         viewPagerHome.pageMargin = 50
-        val homePagerAdapter = HomePagerAdapter(supportFragmentManager)
+        val homePagerAdapter = HomePagerAdapter(supportFragmentManager, ::openStreak)
         viewPagerHome.adapter = homePagerAdapter
         viewPagerHome.currentItem = if (intent.getBooleanExtra("isWithNewFeature", false)) {
             Handler().postDelayed({
@@ -50,7 +90,7 @@ class HomeActivity : AppCompatActivity() {
             }, 500)
             2
         } else {
-            showPopUp()
+            //showPopUp()
             1
         }
         viewPagerHome.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {

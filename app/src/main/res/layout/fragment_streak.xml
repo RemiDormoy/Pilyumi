@@ -6,6 +6,7 @@
     android:layout_height="450dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="20dp"
+    android:id="@+id/strinozenicz"
     android:layout_marginEnd="8dp"
     android:layout_marginStart="8dp"
     android:layout_marginBottom="24dp">
@@ -26,11 +27,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/streakTransitionView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_extrabold"
             android:text="Streak"
+            android:transitionName="robot"
             android:textColor="@color/color3"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/imageView2"
@@ -38,7 +40,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/bestStreakTView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -48,10 +50,10 @@
             android:text="Best streak"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/streakTransitionView1" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/days124textView18"
             android:textSize="24sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,10 +64,10 @@
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+            app:layout_constraintTop_toBottomOf="@+id/bestStreakTView" />
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/currentStreakTestView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -75,10 +77,10 @@
             android:text="Current streak"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+            app:layout_constraintTop_toBottomOf="@+id/days124textView18" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/textView54days"
             android:textSize="24sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -89,7 +91,7 @@
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+            app:layout_constraintTop_toBottomOf="@+id/currentStreakTestView" />
 
 
         <com.airbnb.lottie.LottieAnimationView

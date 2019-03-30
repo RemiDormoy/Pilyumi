@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.fragment_did_you_know.view.*
 import kotlinx.android.synthetic.main.fragment_feelings.view.*
 
 
-class ViewPagerFragment(private val position: Int) : Fragment() {
+class ViewPagerFragment(private val position: Int, private val streakClicked: () -> Unit) : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
@@ -27,6 +27,8 @@ class ViewPagerFragment(private val position: Int) : Fragment() {
             inflate.buttonquizz.setOnClickListener {
                 startActivity(Intent(requireContext(), QuizzActivity::class.java))
             }
+        } else if (position == 2) {
+            inflate.setOnClickListener { streakClicked() }
         }
         return inflate
     }
