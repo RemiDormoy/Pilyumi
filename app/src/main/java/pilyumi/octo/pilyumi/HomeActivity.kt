@@ -14,10 +14,17 @@ import kotlinx.android.synthetic.main.activity_home_root.*
 import org.threeten.bp.LocalTime
 import org.threeten.bp.format.DateTimeFormatter
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.graphics.Color
+import android.os.Handler
 
 
 class HomeActivity : AppCompatActivity() {
+
+    companion object {
+        fun intentForNewFeature(context: Context) = Intent(context, HomeActivity::class.java)
+            .putExtra("isWithNewFeature", true)
+    }
 
     private val evaluator: ArgbEvaluator by lazy {
         ArgbEvaluator()
@@ -33,7 +40,11 @@ class HomeActivity : AppCompatActivity() {
         viewPagerHome.pageMargin = 50
         val homePagerAdapter = HomePagerAdapter(supportFragmentManager)
         viewPagerHome.adapter = homePagerAdapter
-        viewPagerHome.currentItem = 1
+        viewPagerHome.currentItem = if (intent.getBooleanExtra("isWithNewFeature", false)) {
+            2
+        } else {
+            1
+        }
         viewPagerHome.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {
 
@@ -47,9 +58,13 @@ class HomeActivity : AppCompatActivity() {
                                         positionOffsetPixels: Int) {
                 val newPosition = position + positionOffset
                 val color = if (newPosition < 1) {
-                    evaluator.evaluate(newPosition, ContextCompat.getColor(this@HomeActivity, R.color.color1), ContextCompat.getColor(this@HomeActivity, R.color.color2)) as Int
+                    evaluator.evaluate(newPosition,
+                        ContextCompat.getColor(this@HomeActivity, R.color.color1),
+                        ContextCompat.getColor(this@HomeActivity, R.color.color2)) as Int
                 } else {
-                    evaluator.evaluate(newPosition - 1, ContextCompat.getColor(this@HomeActivity, R.color.color2), ContextCompat.getColor(this@HomeActivity, R.color.color3)) as Int
+                    evaluator.evaluate(newPosition - 1,
+                        ContextCompat.getColor(this@HomeActivity, R.color.color2),
+                        ContextCompat.getColor(this@HomeActivity, R.color.color3)) as Int
                 }
                 rootContainer.setBackgroundColor(color)
             }

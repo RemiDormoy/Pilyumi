@@ -11,8 +11,7 @@ class CongratsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_congrats)
         supportActionBar?.hide()
         Handler().postDelayed({
-            //startActivity(HomeActivity.intentForNewFeature(this))
-            finish()
+            startActivity(HomeActivity.intentForNewFeature(this))
         }, 3000)
     }
 }
