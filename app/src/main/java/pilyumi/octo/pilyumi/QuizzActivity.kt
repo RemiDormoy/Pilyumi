@@ -22,17 +22,19 @@ class QuizzActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quizz)
+        supportActionBar?.hide()
         firstQuestionButton.setOnClickListener {
-            firstSuccessView.animate().alpha(1f).withEndAction {
-                firstLottieView.playAnimation()
-                Handler().postDelayed({
-                    moveTo2()
-                }, 1000)
-            }
+            firstQuestionButton.setBackgroundResource(R.drawable.rounded_fill)
+            firstQuestionButton.setTextColor(ContextCompat.getColor(this, android.R.color.white))
+            Handler().postDelayed({
+                moveTo2()
+            }, 1000)
         }
-        secondQuestionButton.setOnClickListener {
-            secondSuccessView.animate().alpha(1f).withEndAction {
-                secondLottieView.playAnimation()
+        listOf(questiongoodtoo, textViewgood, fabulous).forEach { clicked ->
+            clicked.setOnClickListener {
+                clicked.setBackgroundResource(R.drawable.rounded_fill)
+                clicked.setTextColor(
+                    ContextCompat.getColor(this, android.R.color.white))
                 Handler().postDelayed({
                     moveTo3()
                 }, 1000)
@@ -43,7 +45,7 @@ class QuizzActivity : AppCompatActivity() {
             thirdQuestionButton.setTextColor(ContextCompat.getColor(this, android.R.color.white))
             Handler().postDelayed({
                 finish()
-            }, 2000)
+            }, 1000)
         }
     }
 
@@ -57,8 +59,10 @@ class QuizzActivity : AppCompatActivity() {
             cardSecondQuestion.translationY = ((1000f - value) / 1000f) * 10.toDp(resources)
             cardSecondQuestion.rotation = 5 * (1000f - value) / 1000f
 
-            cardThirdQuestion.translationX = ((1000f - value) / 1000f) * 70.toDp(resources) + (value / 1000f) * 50.toDp(resources)
-            cardThirdQuestion.translationY = ((1000f - value) / 1000f) * 30.toDp(resources) + (value / 1000f) * 10.toDp(resources)
+            cardThirdQuestion.translationX = ((1000f - value) / 1000f) * 70.toDp(
+                resources) + (value / 1000f) * 50.toDp(resources)
+            cardThirdQuestion.translationY = ((1000f - value) / 1000f) * 30.toDp(
+                resources) + (value / 1000f) * 10.toDp(resources)
             cardThirdQuestion.rotation = 5 * (1000f - value) / 1000f + (value / 1000f) * 5
         }
         animator.duration = 500
