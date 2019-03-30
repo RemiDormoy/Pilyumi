@@ -67,8 +67,7 @@ class HomeActivity : AppCompatActivity() {
             }
 
             override fun onTick(millisUntilFinished: Long) {
-                timerTextView.text = LocalTime.ofSecondOfDay(millisUntilFinished / 1000).format(
-                    DateTimeFormatter.ofPattern("HH:mm:ss"))
+//                timerTextView.text = LocalTime.ofSecondOfDay(millisUntilFinished / 1000).format(DateTimeFormatter.ofPattern("HH:mm:ss"))
             }
 
         }.start()
