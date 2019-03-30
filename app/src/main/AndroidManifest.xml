@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".QuizzActivity" />
         <activity android:name=".AwardsActivity" />
+        <activity android:name=".CongratsActivity"/>
 
         <service android:name=".MessagingService">
             <intent-filter>

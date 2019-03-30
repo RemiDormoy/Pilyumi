@@ -1,6 +1,7 @@
 package pilyumi.octo.pilyumi
 
 import android.animation.ValueAnimator
+import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.os.Handler
@@ -50,6 +51,7 @@ class QuizzActivity : AppCompatActivity() {
             thirdQuestionButton.setBackgroundResource(R.drawable.rounded_fill)
             thirdQuestionButton.setTextColor(ContextCompat.getColor(this, android.R.color.white))
             Handler().postDelayed({
+                startActivity(Intent(this, CongratsActivity::class.java))
                 finish()
             }, 500)
         }
