@@ -21,6 +21,9 @@ import kotlinx.android.synthetic.main.third_question.*
 
 class QuizzActivity : AppCompatActivity() {
 
+
+    private var yolothirdTwoStuff = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quizz)
@@ -30,7 +33,7 @@ class QuizzActivity : AppCompatActivity() {
             firstQuestionButton.setTextColor(ContextCompat.getColor(this, android.R.color.white))
             Handler().postDelayed({
                 moveTo2()
-            }, 500)
+            }, 300)
         }
         listOf(questiongoodtoo, textViewgood, fabulous).forEach { clicked ->
             clicked.setOnClickListener {
@@ -39,10 +42,10 @@ class QuizzActivity : AppCompatActivity() {
                     ContextCompat.getColor(this, android.R.color.white))
                 Handler().postDelayed({
                     moveTo3()
-                }, 500)
+                }, 300)
             }
         }
-        listOf(textView167, textViewfirstyolo, textView16, textView15, textView1).forEach { text ->
+        listOf(textView167, textViewfirstyolo, textView15, textView1).forEach { text ->
             text.setOnClickListener {
                 text.setBackgroundResource(R.drawable.rounded_fill_red)
                 text.setTextColor(ContextCompat.getColor(this, android.R.color.white))
@@ -52,10 +55,26 @@ class QuizzActivity : AppCompatActivity() {
         thirdQuestionButton.setOnClickListener {
             thirdQuestionButton.setBackgroundResource(R.drawable.rounded_fill)
             thirdQuestionButton.setTextColor(ContextCompat.getColor(this, android.R.color.white))
-            Handler().postDelayed({
-                startActivity(Intent(this, CongratsActivity::class.java))
-                finish()
-            }, 500)
+            if (yolothirdTwoStuff) {
+                Handler().postDelayed({
+                    startActivity(Intent(this, CongratsActivity::class.java))
+                    finish()
+                }, 300)
+            } else {
+                yolothirdTwoStuff = true
+            }
+        }
+        oestrogenTexrView.setOnClickListener {
+            oestrogenTexrView.setBackgroundResource(R.drawable.rounded_fill)
+            oestrogenTexrView.setTextColor(ContextCompat.getColor(this, android.R.color.white))
+            if (yolothirdTwoStuff) {
+                Handler().postDelayed({
+                    startActivity(Intent(this, CongratsActivity::class.java))
+                    finish()
+                }, 300)
+            } else {
+                yolothirdTwoStuff = true
+            }
         }
     }
 

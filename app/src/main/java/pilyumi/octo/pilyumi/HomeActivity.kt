@@ -90,7 +90,7 @@ class HomeActivity : AppCompatActivity() {
             }, 500)
             2
         } else {
-            //showPopUp()
+            showPopUp()
             1
         }
         viewPagerHome.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
